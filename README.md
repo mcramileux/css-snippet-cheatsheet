@@ -1,5 +1,5 @@
-# css-snippet-cheatsheet
-Second Mini-project
+# CSS-Snippet-Cheatsheet
+Second Mini-Project
 
 
-pseudo-code the solved mini-project with a bit of changing some of it.
+Pseudo-code the solved mini-project with a bit of changing some of it.
