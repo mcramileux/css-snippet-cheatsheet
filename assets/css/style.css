@@ -1,0 +1,188 @@
+:root {
+  --outer-space: #14257e;
+  --midtone-green: #99aca8;
+  --gin: #e0eae4;
+  --heliotrope: #2a3d40;
+}
+
+::selection {
+  background-color: var(--gin);
+  color: var(--heliotrope);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  color: var(--outer-space);
+  background-color: var(--gin);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.625rem;
+  color: var(--heliotrope);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+  /* 4rem = 40px (4 * 10px) */
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+}
+
+h5 {
+  font-size: 2rem;
+}
+
+h6 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family:sans-serif;
+}
+
+header {
+  width: 96%;
+  margin: 0 auto;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+header h1.page-title {
+  padding: 1rem 1.2rem;
+  font-size: 4.5rem;
+}
+
+main {
+  width: 96%;
+  margin: 2rem auto;
+}
+
+footer {
+  margin: 1.5rem;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.card-column {
+  flex: 1 0 100%;
+  padding: 1.5rem;
+  transition: flex-basis 500ms linear;
+  margin-bottom: 1.5rem;
+}
+
+.code-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 2rem;
+  color: var(--heliotrope);
+  outline: 2px dashed var(--midtone-green);
+  outline-offset: -2px;
+  transition: all 0.5s ease-in-out;
+}
+
+.code-card .card-header {
+  position: relative;
+  margin: -4rem 0 1.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: var(--heliotrope);
+  color: var(--gin);
+  border: 2px solid var(--midtone-green);
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+.code-card:hover .card-header {
+  box-shadow: inset 0px 0px 8px var(--outer-space), 0 0 15px var(--outer-space);
+}
+
+.code-card .code-block {
+  flex-grow: 1;
+}
+
+.code-card pre {
+  white-space: pre-wrap;
+  overflow: auto;
+  tab-size: 4;
+  padding: 1.2rem 1rem;
+  color: var(--heliotrope);
+  font-weight: 900;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    rgba(255, 99, 71, 0.6) 100%,
+    rgba(255, 99, 71, 0.8) 0%
+    
+  );
+  display: flex;
+  align-items: center;
+}
+
+.code-card pre:active {
+  user-select: all;
+}
+
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+  /* on tablets, set columns to only be 50% of the width and not grow */
+  .card-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* select the last child to grow to full width if it has space to grow */
+  .card-column:last-child {
+    flex-grow: 1;
+  }
+}
+
+/* media query for larger screens */
+@media screen and (min-width: 992px) {
+  header {
+    width: 75%;
+  }
+
+  .card-column {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
